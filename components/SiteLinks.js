@@ -1,32 +1,21 @@
 /*eslint-disable*/
-import React from "react";
 import {List, ListItem} from "@material-ui/core";
+import styles from "styles/SiteLinks"
 
 export default function() {
-    var links = [
+    const classes = styles()
+    var items = [
         "Home", "Custom Guns", "Our Work", "Custom Services",
         "Courses", "Gun Guide", "Account Login", "Shipping & Returns",
         "Privacy Policy", "Terms & Conditions", "Contact"
     ]
-    var ListItems = []
-    for (var i = 0; i < links.length; i++) {
-        ListItems.push(<ListItem>{links[i]}</ListItem>)
-    }
     return (
-        <>
-        <List id="testlist">
-            {ListItems}
+        <List className={classes.List}>
+            {items.map(s => (
+                <ListItem className={classes.ListItem}>
+                    {s}
+                </ListItem>
+            ))}
         </List>
-        <style jsx>
-        {`
-            List, #testlist {
-                column-width: 14em
-            }
-            ListItem {
-                border: solid 1px black
-            }
-        `}
-        </style>
-        </>
     )
 }

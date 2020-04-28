@@ -1,23 +1,19 @@
-import React from "react";
-
-// core components
-import Header from "components/Header.js";
-import Footer from "components/Footer";
-
-// Sections for this page
-import Carousel from "pages/sections/index/Carousel";
+import Carousel from "pages/sections/index/Carousel"
 import RifleShotgun from "pages/sections/index/RifleShotgun"
+import Specs from "pages/sections/index/Specs"
+import CombatElite from "pages/sections/index/CombatElite"
+import Competition from "pages/sections/index/Competition"
+import JoinUs from "pages/sections/index/JoinUs"
+import PartsCustom from "pages/sections/index/PartsCustom"
 
-export default function LandingPage() {
-  return (
-    <div>
-      <Header
-        color="transparent" fixed
-        changeColorOnScroll={{ height: 400, color: "white" }}
-      />
-      <Carousel />
-      <RifleShotgun />
-      <Footer />
-    </div>
-  );
-}
+export default () => (
+  <>
+  <Carousel />
+  <RifleShotgun />
+  <Specs />
+  <CombatElite />
+  <Competition />
+  <JoinUs />
+  <PartsCustom />
+  </>
+)

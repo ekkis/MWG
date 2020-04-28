@@ -6,10 +6,10 @@ import classNames from "classnames";
 import styles from "./style.js";
 
 function Section(props) {
-    const { style } = props;
+    const { style, className } = props;
     // if (style) import styles from style;
     const classes = styles();
-    const sectionClasses = classNames({
+    const sectionClasses = classNames(className, {
         [classes.section]: true
     });
     return (

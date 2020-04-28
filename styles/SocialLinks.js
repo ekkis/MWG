@@ -2,7 +2,7 @@ import { defaultFont } from "assets/jss/nextjs-material-kit.js";
 import { makeStyles } from "@material-ui/core/styles";
 import tooltip from "assets/jss/nextjs-material-kit/tooltipsStyle.js";
 
-const headerLinksStyle = theme => ({
+export default makeStyles(theme => ({
   list: {
     ...defaultFont,
     fontSize: "14px",
@@ -11,7 +11,10 @@ const headerLinksStyle = theme => ({
     listStyle: "none",
     paddingTop: "0",
     paddingBottom: "0",
-    color: "inherit"
+    color: "inherit",
+    height: "50px",
+    border: "none 1px white",
+    display: "flex"
   },
   listItem: {
     float: "left",
@@ -120,6 +123,4 @@ const headerLinksStyle = theme => ({
   marginRight5: {
     marginRight: "5px"
   }
-});
-
-export default makeStyles(headerLinksStyle);
+}))
