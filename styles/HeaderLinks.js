@@ -1,8 +1,8 @@
 import { defaultFont } from "assets/jss/nextjs-material-kit.js";
-
+import { makeStyles } from "@material-ui/core/styles";
 import tooltip from "assets/jss/nextjs-material-kit/tooltipsStyle.js";
 
-const headerLinksStyle = theme => ({
+export default makeStyles(theme => ({
   list: {
     ...defaultFont,
     fontSize: "14px",
@@ -120,6 +120,4 @@ const headerLinksStyle = theme => ({
   marginRight5: {
     marginRight: "5px"
   }
-});
-
-export default headerLinksStyle;
+}))
