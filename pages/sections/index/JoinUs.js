@@ -1,4 +1,4 @@
-import Button from "components/CustomButtons/Button"
+import Button from "components/Button"
 // import useStyles from "styles/JoinUs";
 
 export default () => {

@@ -1,12 +1,12 @@
 /*eslint-disable*/
 
 // @material-ui/core components
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
+import List from "@material-ui/core/List"
+import ListItem from "@material-ui/core/ListItem"
 
 // core components
-import Button from "components/CustomButtons/Button.js";
-import styles from "styles/HeaderLinks";
+import Button from "components/Button"
+import styles from "styles/HeaderLinks"
 
 export default () => {
   const classes = styles()

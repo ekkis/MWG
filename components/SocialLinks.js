@@ -6,7 +6,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // core components
-import Button from "components/CustomButtons/Button.js"
+import Button from "components/Button"
 import styles from "styles/SocialLinks"
 
 export default () => {
