@@ -10,7 +10,7 @@ const PAGES = {
   },
   CUSTOM_SERVICES: {
     title: 'Custom Services',
-    url: '/custorm-services',
+    url: '/custom-services',
   },
   COURSES: {
     title: 'Courses',
