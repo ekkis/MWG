@@ -6,7 +6,7 @@ import { container } from 'assets/jss/nextjs-material-kit.js'
 import { Grid, GridItem } from 'components/Grid'
 import SocialLinks from './SocialLinks'
 import SiteLinks from './SiteLinks'
-import MailingList from 'components/MailingList'
+import MailingList from './MailingList'
 
 const useStyles = makeStyles(theme => ({
   footer: {
