@@ -1,57 +1,48 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import App from "next/app"
-import Head from "next/head"
-import Router from "next/router"
+import React, { useEffect } from 'react'
+import ReactDOM from 'react-dom'
+import Router from 'next/router'
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
-import PageChange from "components/PageChange"
-import Header from "components/Header"
-import Footer from "components/Footer"
+import PageChange from 'components/PageChange'
+import Layout from 'hoc/Layout'
+import { theme } from 'styles/theme';
+import COMMON_CONSTANTS from 'constants/common'
+import 'assets/scss/nextjs-material-kit.scss?v=1.0.0'
 
-import "assets/scss/nextjs-material-kit.scss?v=1.0.0"
-
-Router.events.on("routeChangeStart", url => {
+Router.events.on('routeChangeStart', url => {
   console.log(`Loading: ${url}`)
-  document.body.classList.add("body-page-transition")
+  document.body.classList.add('body-page-transition')
   ReactDOM.render(
     <PageChange path={url} />,
-    document.getElementById("page-transition")
+    document.getElementById('page-transition')
   )
 })
-Router.events.on("routeChangeComplete", () => {
-  ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"))
-  document.body.classList.remove("body-page-transition")
-})
-Router.events.on("routeChangeError", () => {
-  ReactDOM.unmountComponentAtNode(document.getElementById("page-transition"))
-  document.body.classList.remove("body-page-transition")
+
+Router.events.on('routeChangeComplete', () => {
+  ReactDOM.unmountComponentAtNode(document.getElementById('page-transition'))
+  document.body.classList.remove('body-page-transition')
 })
 
-export default class MyApp extends App {
-  static async getInitialProps({ Component, router, ctx }) {
-    let pageProps = {}
+Router.events.on('routeChangeError', () => {
+  ReactDOM.unmountComponentAtNode(document.getElementById('page-transition'))
+  document.body.classList.remove('body-page-transition')
+})
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
+const MyApp = ({ Component, pageProps }) => {
 
-    return { pageProps }
-  }
-  render() {
-    const { Component, pageProps } = this.props
+  useEffect(() => {
+    document.title = COMMON_CONSTANTS.TITLE
+  })
 
-    return (
-      <>
-        <Head>
-          <title>Modern Warrior Gunsmithing</title>
-        </Head>
-        <Header
-          color="transparent" fixed
-          changeColorOnScroll={{ height: 400, color: "white" }}
-        />
+  return (
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <Layout>
         <Component {...pageProps} />
-        <Footer />
-      </>
-    )
-  }
-}
+      </Layout>
+    </MuiThemeProvider>
+  );
+};
+
+export default MyApp;
