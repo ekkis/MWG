@@ -4,6 +4,7 @@ import Router from 'next/router'
 
 import PageChange from 'components/PageChange'
 import Layout from 'hoc/Layout'
+import COMMON_CONSTANTS from 'constants/common'
 import 'assets/scss/nextjs-material-kit.scss?v=1.0.0'
 
 Router.events.on('routeChangeStart', url => {
@@ -26,9 +27,11 @@ Router.events.on('routeChangeError', () => {
 })
 
 const MyApp = ({ Component, pageProps }) => {
+
   useEffect(() => {
-    document.title = 'Modern Warrior Gunsmithing'
+    document.title = COMMON_CONSTANTS.TITLE
   })
+
   return (
     <Layout>
       <Component {...pageProps} />
