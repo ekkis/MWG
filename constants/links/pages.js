@@ -18,7 +18,7 @@ const PAGES = {
   },
   GALLERY: {
     title: 'Gallery',
-    url: '/gallerys',
+    url: '/gallery',
   },
   GUN_GUIDE: {
     title: 'Gun Guide',
