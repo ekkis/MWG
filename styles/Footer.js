@@ -1,4 +1,4 @@
-import { container, primaryColor } from "assets/jss/nextjs-material-kit.js";
+import { container } from "assets/jss/nextjs-material-kit.js";
 import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles({
