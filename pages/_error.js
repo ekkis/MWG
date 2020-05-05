@@ -1,12 +1,5 @@
-import React, { Component } from "react";
-import Router from "next/router";
+import React from 'react';
 
-export default class _error extends Component {
-  componentDidMount = () => {
-    Router.push("/components");
-  };
+const Error = () => <div>Error message</div>
 
-  render() {
-    return <div />;
-  }
-}
+export default Error;
