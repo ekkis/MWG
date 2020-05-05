@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import Router from 'next/router'
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import PageChange from 'components/PageChange'
 import Layout from 'hoc/Layout'
+import { theme } from 'styles/theme';
 import COMMON_CONSTANTS from 'constants/common'
 import 'assets/scss/nextjs-material-kit.scss?v=1.0.0'
 
@@ -33,9 +36,12 @@ const MyApp = ({ Component, pageProps }) => {
   })
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </MuiThemeProvider>
   );
 };
 

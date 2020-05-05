@@ -7,7 +7,7 @@ import Section from 'components/Section'
 
 const useStyles = makeStyles(theme => ({
   container: {
-    backgroundColor: 'pink',
+    backgroundColor: theme.custom.palette.pink,
     padding: '4em'
   }
 }));
