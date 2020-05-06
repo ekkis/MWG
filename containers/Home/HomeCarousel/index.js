@@ -1,9 +1,34 @@
 
 import Carousel from 'react-slick'
-import LocationOn from '@material-ui/icons/LocationOn'
+import classNames from 'classnames'
+import { makeStyles } from '@material-ui/core/styles'
+import { Typography } from '@material-ui/core'
+
+import OutlineButton from 'components/UI/Buttons/OutlineButton'
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    backgroundColor: theme.palette.background.main
+  },
+  image: {
+    width: '100%',
+    height: 617,
+    objectFit: 'contain'
+  },
+  content: {
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  description: {
+    textTransform: 'uppercase',
+    fontWeight: 'lighter',
+    margin: theme.spacing(2, 0)
+  }
+}));
 
 const settings = {
   dots: true,
+  arrows: false,
   infinite: true,
   speed: 500,
   slidesToShow: 1,
@@ -14,36 +39,49 @@ const settings = {
 
 const CAROUSEL_ITEMS = [
   {
-    location: 'Yellowstone National Park, United States',
-    imageUrl: '/img/bg.jpg'
+    title: 'Modern weapons',
+    description: 'time-honored weaponscraft',
+    imageUrl: '/img/background/main-carousel.png'
   },
   {
-    location: 'Somewhere Beyond, United States',
-    imageUrl: '/img/bg2.jpg'
+    title: 'Modern weapons',
+    description: 'time-honored weaponscraft',
+    imageUrl: '/img/background/main-carousel.png'
   },
   {
-    location: 'Yellowstone National Park, United States',
-    imageUrl: '/img/bg3.jpg'
+    title: 'Modern weapons',
+    description: 'time-honored weaponscraft',
+    imageUrl: '/img/background/main-carousel.png'
   }
 ]
 
 const HomeCarousel = () => {
+  const classes = useStyles();
+
   return (
     <Carousel {...settings}>
       {
         CAROUSEL_ITEMS.map((item, index) => (
-          <div key={index}>
-            <img src={item.imageUrl} alt='carousel image' className='slick-image' />
-            <div className='slick-caption'>
-              <h4>
-                <LocationOn className='slick-icons' />
-                {item.location}
-              </h4>
+          <div key={index} className={classes.container}>
+            <img src={item.imageUrl} alt='carousel image' className={classNames(classes.image, 'slick-image')} />
+            <div className={classNames(classes.content, 'slick-caption')}>
+              <Typography
+                variant='h4'
+                color='textPrimary'
+                className={classes.description}
+              >
+                {`${item.title}, `}
+                <br />
+                {item.description}
+              </Typography>
+              <OutlineButton >
+                Shop Handguns
+              </OutlineButton>
             </div>
           </div>
         ))
       }
-    </Carousel>
+    </Carousel >
   )
 }
 

@@ -1,23 +1,45 @@
 import classNames from 'classnames'
-import LocationOn from '@material-ui/icons/LocationOn'
 import { makeStyles } from '@material-ui/core/styles';
+import { Typography } from '@material-ui/core'
 
 import { Grid, GridItem } from 'components/Grid'
+import LinkButton from 'components/UI/Buttons/LinkButton'
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: theme.spacing(6),
+    backgroundImage: `url(/img/background/rifle-background.jpg)`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '101% 100%',
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(3)
+    }
+  },
   image: {
-    width: '100%'
+    width: '100%',
+    height: 200,
+    objectFit: 'contain'
+  },
+  description: {
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    fontWeight: 'lighter',
+    margin: theme.spacing(2, 0)
   }
 }));
 
 const RIFLE_ITEMS = [
   {
-    location: 'Yellowstone National Park, United States',
-    imageUrl: '/img/bg.jpg'
+    name: 'ShutGuns',
+    imageUrl: '/img/weapon/benelliM2A.png'
   },
   {
-    location: 'Somewhere Beyond, United States',
-    imageUrl: '/img/bg2.jpg'
+    name: 'Rifles',
+    imageUrl: '/img/weapon/rifle.png'
   },
 ]
 
@@ -28,20 +50,25 @@ const RifleShotgun = () => {
     <Grid>
       {
         RIFLE_ITEMS.map((item, index) => (
-          <GridItem key={index} xs={12} sm={12} md={6} className='marginAuto'>
-            <div>
-              <img
-                alt='slide image'
-                src={item.imageUrl}
-                className={classNames(classes.image, 'slick-image')}
-              />
-              <div className='slick-caption'>
-                <h4>
-                  <LocationOn className='slick-icons' />
-                  {item.location}
-                </h4>
-              </div>
-            </div>
+          <GridItem key={index} xs={12} sm={12} md={6} className={classes.root}>
+            <img
+              alt='slide image'
+              src={item.imageUrl}
+              className={classNames(classes.image)}
+            />
+            <Typography
+              variant='h4'
+              color='textPrimary'
+              className={classes.description}
+            >
+              Warrior
+              <br />
+              {item.name}
+            </Typography>
+            <LinkButton
+              label='custom build'
+              url=''
+            />
           </GridItem>
         ))
       }
