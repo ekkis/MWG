@@ -16,12 +16,6 @@
   touch-action: pan-y;
   -webkit-tap-highlight-color: transparent;
 
-  @media (min-width: 768px) {
-    .slick-caption {
-      display: block !important;
-    }
-  }
-
   .slick-caption {
     padding-bottom: 45px;
     position: absolute;
@@ -33,7 +27,11 @@
     color: #ffffff;
     text-align: center;
     z-index: 3;
-    display: none;
+    display: flex;
+    @media (max-width: 400px) { 
+      right: 5%;
+      left: 5%;
+    } 
   }
   .slick-slide {
     > div:first-child {
@@ -208,14 +206,13 @@ button.slick-arrow.slick-next {
 }
 .slick-dots li,
 .slick-dots li button {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   cursor: pointer;
 }
 .slick-dots li {
   position: relative;
   display: inline-block;
-  margin: 0 5px;
   padding: 0;
 }
 .slick-dots li button {
@@ -231,9 +228,10 @@ button.slick-arrow.slick-next {
     position: absolute;
     top: 0;
     left: 0;
-    width: 10px;
-    height: 10px;
-    content: "\2022";
+    width: 5px;
+    height: 5px;
+    content: "\25CF";
+    border-radius: 50%;
     text-align: center;
     opacity: 1;
     background-color: #fff;
@@ -246,9 +244,9 @@ button.slick-arrow.slick-next {
   }
 }
 .slick-dots li.slick-active button:before {
-  width: 15px;
-  height: 15px;
+  width: 5px;
+  height: 5px;
+  background-color: #228dfc;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12),
     0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  top: -3px;
 }

@@ -1,19 +1,39 @@
 
 import Carousel from 'react-slick'
+import classNames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
-import LocationOn from '@material-ui/icons/LocationOn'
+import { Typography } from '@material-ui/core'
+import Hidden from '@material-ui/core/Hidden';
 
 import Section from 'components/Section'
+import LinkButton from 'components/UI/Buttons/LinkButton'
+import MobileCombatItem from './MobileCombatItem'
 
 const useStyles = makeStyles(theme => ({
-  container: {
-    backgroundColor: theme.custom.palette.pink,
-    padding: '4em'
+  root: {
+    backgroundColor: theme.palette.background.blueLight,
+    padding: theme.spacing(5),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(3, 2)
+    }
+  },
+  title: {
+    textTransform: 'uppercase',
+    fontWeight: 'lighter',
+    margin: theme.spacing(1, 0)
+  },
+  image: {
+    height: 600,
+    objectFit: 'cover !important'
+  },
+  content: {
+    flexDirection: 'column',
+    alignItems: 'flex-end'
   }
 }));
 
 const settings = {
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 1,
@@ -24,16 +44,20 @@ const settings = {
 
 const COMBAT_ITEMS = [
   {
-    location: 'Yellowstone National Park, United States',
-    imageUrl: '/img/bg.jpg'
+    title: 'Mordern Warrior',
+    imageUrl: '/img/background/combat-morden-warrior.jpg'
   },
   {
-    location: 'Somewhere Beyond, United States',
-    imageUrl: '/img/bg2.jpg'
+    title: 'Combat Essentials',
+    imageUrl: '/img/background/combat-essentials.jpg'
   },
   {
-    location: 'Yellowstone National Park, United States',
-    imageUrl: '/img/bg3.jpg'
+    title: 'Combat Elite',
+    imageUrl: '/img/background/combat-elite.jpg'
+  },
+  {
+    title: 'Competition',
+    imageUrl: '/img/background/combat-competition.jpg'
   }
 ]
 
@@ -41,23 +65,45 @@ const CombatElite = () => {
   const classes = useStyles();
 
   return (
-    <Section className={classes.container}>
-      <h1>Warrior Series</h1>
-      <Carousel {...settings}>
-        {
-          COMBAT_ITEMS.map((item, index) => (
-            <div key={index}>
-              <img src={item.imageUrl} alt='carousel image' className='slick-image' />
-              <div className='slick-caption'>
-                <h4>
-                  <LocationOn className='slick-icons' />
-                  {item.location}
-                </h4>
+    <Section className={classes.root}>
+      <Typography
+        variant='h4'
+        color='textPrimary'
+        className={classes.title}
+      >
+        Warrior Series
+      </Typography>
+      <Hidden xsDown implementation='css'>
+        <Carousel {...settings}>
+          {
+            COMBAT_ITEMS.map((item, index) => (
+              <div key={index}>
+                <img src={item.imageUrl} alt='carousel image' className={classNames(classes.image, 'slick-image')} />
+                <div className={classNames(classes.content, 'slick-caption')}>
+                  <Typography
+                    variant='h4'
+                    color='textPrimary'
+                    className={classes.title}
+                  >
+                    {item.title}
+                  </Typography>
+                  <LinkButton
+                    label='shop custom build'
+                    url=''
+                  />
+                </div>
               </div>
-            </div>
-          ))
+            ))
+          }
+        </Carousel>
+      </Hidden>
+      <Hidden smUp implementation='css'>
+        {
+          COMBAT_ITEMS.map((item, index) =>
+            <MobileCombatItem key={index} item={item} />
+          )
         }
-      </Carousel>
+      </Hidden>
     </Section>
   )
 }

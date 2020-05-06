@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     zIndex: '2',
     position: 'relative',
-    backgroundColor: 'black'
+    backgroundColor: theme.palette.background.brownLight
   },
   footerWhiteFont: {
     '&,&:hover,&:focus': {
@@ -39,11 +39,11 @@ export default function Footer({ whiteFont }) {
   return (
     <footer className={classNames({ [classes.footer]: true, [classes.footerWhiteFont]: whiteFont })}>
       <Grid className={classNames({ [classes.gridContainer]: true })}>
-        <GridItem xs={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
+        <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
           <SocialLinks />
           <SiteLinks />
         </GridItem>
-        <GridItem xs={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
+        <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
           <MailingList />
         </GridItem>
         <GridItem xs={12} className={classNames('marginAuto', { [classes.gridItem]: true })}>
