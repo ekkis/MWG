@@ -2,8 +2,6 @@
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
-import Section from 'components/Section'
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
