@@ -57,7 +57,11 @@ const ArticleList = ({ articles }) => {
         <ListHeader />
         {[...Array(count)].map((e, index) => {
           const article = articles[index];
-          return <ListItem key={index} article={article} />
+          return (
+            <ListItem
+              key={index}
+              article={article} />
+          )
         })}
         {
           total > count &&

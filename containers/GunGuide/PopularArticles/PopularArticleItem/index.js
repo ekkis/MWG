@@ -1,13 +1,15 @@
 
 import { useMemo } from 'react'
+import { useRouter } from 'next/router';
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
-import moment from 'moment'
 
 import LinkButton from 'components/UI/Buttons/LinkButton'
+import PAGES_CONSTANTS from 'constants/links/pages'
+import { getDateByFormat } from 'utils/time'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -65,7 +67,16 @@ const useStyles = makeStyles(theme => ({
 
 const PopularArticleItem = ({ article }) => {
   const classes = useStyles();
-  const dateString = useMemo(() => moment(article.date).format('MMM DD, YYYY'), [article]);
+  const router = useRouter();
+
+  const dateString = useMemo(() => getDateByFormat(article.date), [article]);
+
+  const showArticleHandler = () => {
+    router.push({
+      pathname: PAGES_CONSTANTS.GUN_GUIDE_ARTICLE.url,
+      query: { id: article.id }
+    });
+  }
 
   return (
     <Card className={classes.root}>
@@ -95,7 +106,7 @@ const PopularArticleItem = ({ article }) => {
         </Typography>
         <LinkButton
           label='read more'
-          url=''
+          onClick={showArticleHandler}
           className={classes.button}
         />
       </CardContent>

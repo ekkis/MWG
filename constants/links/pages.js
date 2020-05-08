@@ -23,6 +23,10 @@ const PAGES = {
   GUN_GUIDE: {
     title: 'Gun Guide',
     url: '/gun-guide',
+  },
+  GUN_GUIDE_ARTICLE: {
+    title: 'Gun Guide Article',
+    url: '/gun-guide/article',
   }
 };
 

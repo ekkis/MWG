@@ -1,10 +1,12 @@
 
+import { useRouter } from 'next/router';
 import Carousel from 'react-slick'
 import classNames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
 import OutlineButton from 'components/UI/Buttons/OutlineButton'
+import PAGES_CONSTANTS from 'constants/links/pages'
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -69,6 +71,14 @@ const CAROUSEL_ITEMS = [
 
 const GunGuideCarousel = () => {
   const classes = useStyles();
+  const router = useRouter();
+
+  const showArticleHandler = (id) => () => {
+    router.push({
+      pathname: PAGES_CONSTANTS.GUN_GUIDE_ARTICLE.url,
+      query: { id }
+    });
+  }
 
   return (
     <Carousel {...settings}>
@@ -95,7 +105,8 @@ const GunGuideCarousel = () => {
               >
                 {item.description}
               </Typography>
-              <OutlineButton>
+              <OutlineButton
+                onClick={showArticleHandler(index + 1)} >
                 Read More
               </OutlineButton>
             </div>

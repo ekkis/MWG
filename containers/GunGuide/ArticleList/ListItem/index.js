@@ -1,11 +1,12 @@
 
 import { useMemo } from 'react'
-import moment from 'moment'
+import { useRouter } from 'next/router';
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import { Grid, GridItem } from 'components/Grid'
 import TextButton from 'components/UI/Buttons/TextButton'
+import PAGES_CONSTANTS from 'constants/links/pages'
+import { getDateByFormat } from 'utils/time'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -59,7 +60,16 @@ const useStyles = makeStyles(theme => ({
 
 const ListItem = ({ article }) => {
   const classes = useStyles();
-  const dateString = useMemo(() => moment(article.date).format('MMM DD, YYYY'), [article]);
+  const router = useRouter();
+
+  const dateString = useMemo(() => getDateByFormat(article.date), [article]);
+
+  const showArticleHandler = () => {
+    router.push({
+      pathname: PAGES_CONSTANTS.GUN_GUIDE_ARTICLE.url,
+      query: { id: article.id }
+    });
+  }
 
   return (
     <main className={classes.root}>
@@ -93,7 +103,9 @@ const ListItem = ({ article }) => {
         >
           {article.description}
         </Typography>
-        <TextButton label='read more' />
+        <TextButton
+          onClick={showArticleHandler}
+          label='read more' />
       </div>
     </main>
   )
