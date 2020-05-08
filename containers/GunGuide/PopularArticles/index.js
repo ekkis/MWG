@@ -21,7 +21,10 @@ const useStyles = makeStyles(theme => ({
     fontWeight: 'lighter',
     textAlign: 'center',
     textTransform: 'uppercase',
-    marginBottom: theme.spacing(4)
+    marginBottom: theme.spacing(4),
+    [theme.breakpoints.down('xs')]: {
+      fontSize: 24
+    }
   },
   container: {
     maxWidth: 820
