@@ -1,4 +1,6 @@
 
+import { useRouter } from 'next/router'
+import classNames from 'classnames'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import { makeStyles } from '@material-ui/core/styles'
@@ -27,6 +29,7 @@ const useStyles = makeStyles(theme => ({
     width: 'auto',
     margin: '0',
     padding: '0',
+    color: theme.palette.text.primary,
     [theme.breakpoints.down('sm')]: {
       width: '100%',
       '&:after': {
@@ -39,18 +42,14 @@ const useStyles = makeStyles(theme => ({
       }
     }
   },
-  listItemText: {
-    padding: '0 !important'
-  },
   navLink: {
     color: 'inherit',
     position: 'relative',
-    padding: '0.9375rem',
-    fontWeight: '400',
+    padding: theme.spacing(1.5),
     fontSize: '12px',
     textTransform: 'uppercase',
-    borderRadius: '3px',
-    lineHeight: '20px',
+    lineHeight: '15px',
+    borderRadius: 'unset',
     textDecoration: 'none',
     margin: '0px',
     display: 'inline-flex',
@@ -69,62 +68,9 @@ const useStyles = makeStyles(theme => ({
       }
     }
   },
-  notificationNavLink: {
-    [theme.breakpoints.down('md')]: {
-      top: '0',
-      margin: '5px 15px'
-    },
-    color: '#FFF',
-    padding: '0.9375rem',
-    fontWeight: '400',
-    fontSize: '12px',
-    textTransform: 'uppercase',
-    lineHeight: '20px',
-    textDecoration: 'none',
-    margin: '0px',
-    display: 'inline-flex',
-    top: '4px'
-  },
-  registerNavLink: {
-    [theme.breakpoints.down('md')]: {
-      top: '0',
-      margin: '5px 15px'
-    },
-    top: '3px',
-    position: 'relative',
-    fontWeight: '400',
-    fontSize: '12px',
-    textTransform: 'uppercase',
-    lineHeight: '20px',
-    textDecoration: 'none',
-    margin: '0px',
-    display: 'inline-flex'
-  },
-  navLinkActive: {
-    color: 'inherit',
-    backgroundColor: 'rgba(255, 255, 255, 0.1)'
-  },
-  icons: {
-    width: '20px',
-    height: '20px',
-    marginRight: '3px'
-  },
-  socialIcons: {
-    position: 'relative',
-    fontSize: '20px !important',
-    marginRight: '4px'
-  },
-  dropdownLink: {
-    '&,&:hover,&:focus': {
-      color: 'inherit',
-      textDecoration: 'none',
-      display: 'block',
-      padding: '10px 20px'
-    }
-  },
   ...tooltip,
-  marginRight5: {
-    marginRight: '5px'
+  selected: {
+    borderBottom: `2px solid ${theme.palette.button.main}`
   }
 }));
 
@@ -153,13 +99,14 @@ const LINKS = [
 
 const HeaderItem = ({ title, url }) => {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <ListItem className={classes.listItem}>
       <Button
         href={url}
         color='transparent'
-        className={classes.navLink}
+        className={classNames(classes.navLink, { [classes.selected]: router.pathname === url })}
       >
         {title}
       </Button>

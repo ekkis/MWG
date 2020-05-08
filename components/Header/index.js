@@ -17,7 +17,7 @@ import {
 
 import HeaderLinks from './HeaderLinks'
 import PAGES_CONSTANTS from 'constants/links/pages'
-const logo = '/img/MWG_BADGE_GRY_RGB.png'
+const logo = '/img/MWG_SMALL_Blue_RGB.png'
 
 const useStyles = makeStyles(theme => ({
   appBar: {
@@ -204,11 +204,6 @@ export default function Header(props) {
     [classes.fixed]: fixed
   })
 
-  const brandComponent = (
-    <Link href={PAGES_CONSTANTS.HOME.url}>
-      <Button className={classes.title}>{brand || ''}</Button>
-    </Link>
-  )
   const leftLinks = (<HeaderLinks />)
 
   return (
@@ -217,15 +212,10 @@ export default function Header(props) {
         <Link href={PAGES_CONSTANTS.HOME.url}>
           <img src={logo} className={classes.logo} />
         </Link>
-        {leftLinks !== undefined ? brandComponent : null}
         <div className={classes.flex}>
-          {leftLinks !== undefined ? (
-            <Hidden smDown implementation='css'>
-              {leftLinks}
-            </Hidden>
-          ) : (
-              brandComponent
-            )}
+          <Hidden smDown implementation='css'>
+            {leftLinks}
+          </Hidden>
         </div>
         <Hidden smDown implementation='css'>
           {rightLinks}

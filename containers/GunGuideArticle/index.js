@@ -1,21 +1,24 @@
 
-import GunGuideCarousel from './GunGuideCarousel'
-import PopularArticles from './PopularArticles'
-import ArticleList from './ArticleList'
+import { useRouter } from 'next/router';
 
-const GunGuide = () => {
-  const popularArticles = ARTICLES.slice(0, 6);
+import ArticleHeader from './ArticleHeader'
+import ArticleFooter from './ArticleFooter'
+import ArticleContent from './ArticleContent';
 
+const GunGuideArticle = () => {
+  const router = useRouter();
+
+  const article = ARTICLES[router.query.id - 1];
   return (
     <>
-      <GunGuideCarousel />
-      <PopularArticles articles={popularArticles} />
-      <ArticleList articles={ARTICLES} />
+      <ArticleHeader article={article} />
+      <ArticleContent article={article} />
+      <ArticleFooter />
     </>
   )
 }
 
-export default GunGuide;
+export default GunGuideArticle;
 
 const ARTICLES = [
   {
