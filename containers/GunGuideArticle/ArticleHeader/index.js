@@ -1,9 +1,6 @@
 
-import classNames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
-
-import PAGES_CONSTANTS from 'constants/links/pages'
 
 const useStyles = makeStyles(theme => ({
   root: {

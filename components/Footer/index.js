@@ -1,31 +1,36 @@
-import PropTypes from 'prop-types'
+
 import classNames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
-import { container } from 'assets/jss/nextjs-material-kit.js'
 
 import { Grid, GridItem } from 'components/Grid'
 import SocialLinks from './SocialLinks'
 import SiteLinks from './SiteLinks'
 import MailingList from './MailingList'
+import FooterCopyRight from './FooterCopyRight'
 
 const useStyles = makeStyles(theme => ({
-  footer: {
-    padding: '0.9375rem 0',
-    textAlign: 'center',
+  root: {
     display: 'flex',
-    zIndex: '2',
-    position: 'relative',
-    backgroundColor: theme.palette.background.brownLight
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: theme.spacing(5),
+    backgroundColor: theme.palette.background.brownLight,
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(2)
+    }
+  },
+  container: {
+    width: '100%',
+    maxWidth: 820
   },
   footerWhiteFont: {
     '&,&:hover,&:focus': {
       color: '#FFFFFF'
     }
   },
-  container,
   gridItem: {
-    border: 'none 1px red',
-    padding: '0 3em'
+    border: 'none 1px red'
   },
   gridContainer: {
     border: 'none 1px blue',
@@ -33,30 +38,25 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function Footer({ whiteFont }) {
+const Footer = () => {
   const classes = useStyles();
 
   return (
-    <footer className={classNames({ [classes.footer]: true, [classes.footerWhiteFont]: whiteFont })}>
-      <Grid className={classNames({ [classes.gridContainer]: true })}>
-        <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
-          <SocialLinks />
-          <SiteLinks />
-        </GridItem>
-        <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
-          <MailingList />
-        </GridItem>
-        <GridItem xs={12} className={classNames('marginAuto', { [classes.gridItem]: true })}>
-          For authorized transfer, firearms are required to be shipped
-          to an authorized dealer and the necessary FFL licence(s) presented
-        <br />
-        All Rights Reserved &copy 2019
-      </GridItem>
-      </Grid>
+    <footer className={classes.root}>
+      <div className={classes.container}>
+        <Grid className={classNames({ [classes.gridContainer]: true })}>
+          <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
+            <SocialLinks />
+            <SiteLinks />
+          </GridItem>
+          <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
+            <MailingList />
+          </GridItem>
+        </Grid>
+        <FooterCopyRight />
+      </div>
     </footer>
   )
 }
 
-Footer.propTypes = {
-  whiteFont: PropTypes.bool
-}
+export default Footer

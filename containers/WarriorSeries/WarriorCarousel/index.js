@@ -14,8 +14,8 @@ const settings = {
 }
 
 const CAROUSEL_ITEMS = [
-  '/img/bg.jpg',
-  '/img/bg2.jpg'
+  '/img/background/gun-guide-carousel-1.jpg',
+  '/img/background/gun-guide-carousel-2.jpg'
 ]
 
 const WarriorCarousel = () => {
