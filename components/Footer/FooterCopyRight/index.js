@@ -10,6 +10,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0)
   },
   description: {
+    fontWeight: 'lighter',
     textAlign: 'center'
   }
 }));

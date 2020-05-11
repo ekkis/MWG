@@ -1,6 +1,6 @@
 
-import classNames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
+import Hidden from '@material-ui/core/Hidden'
 
 import { Grid, GridItem } from 'components/Grid'
 import SocialLinks from './SocialLinks'
@@ -22,19 +22,13 @@ const useStyles = makeStyles(theme => ({
   },
   container: {
     width: '100%',
-    maxWidth: 820
-  },
-  footerWhiteFont: {
-    '&,&:hover,&:focus': {
-      color: '#FFFFFF'
-    }
+    maxWidth: 920
   },
   gridItem: {
     border: 'none 1px red'
   },
-  gridContainer: {
-    border: 'none 1px blue',
-    width: '100%'
+  logo: {
+    width: 180
   }
 }));
 
@@ -44,18 +38,36 @@ const Footer = () => {
   return (
     <footer className={classes.root}>
       <div className={classes.container}>
-        <Grid className={classNames({ [classes.gridContainer]: true })}>
-          <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
-            <SocialLinks />
-            <SiteLinks />
-          </GridItem>
-          <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
-            <MailingList />
-          </GridItem>
-        </Grid>
+        <SocialLinks />
+        <Hidden smDown implementation='css'>
+          <Grid className={classes.gridContainer}>
+            <GridItem xs={12} sm={5} className={classes.gridItem}>
+              <SiteLinks />
+            </GridItem>
+            <GridItem xs={12} sm={4} className={classes.gridItem}>
+              <MailingList />
+            </GridItem>
+            <GridItem xs={12} sm={3} className={classes.gridItem}>
+              <img
+                src='/img/MWG_Primary_RGB.png'
+                alt='footerImage'
+                className={classes.logo}
+              />
+            </GridItem>
+          </Grid>
+        </Hidden>
+        <Hidden mdUp implementation='css'>
+          <MailingList />
+          <SiteLinks />
+          <img
+            src='/img/MWG_Primary_RGB.png'
+            alt='footerImage'
+            className={classes.logo}
+          />
+        </Hidden>
         <FooterCopyRight />
       </div>
-    </footer>
+    </footer >
   )
 }
 
