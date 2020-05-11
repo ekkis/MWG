@@ -1,62 +1,74 @@
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
+
 import { makeStyles } from '@material-ui/core/styles'
-import { container } from 'assets/jss/nextjs-material-kit.js'
+import Hidden from '@material-ui/core/Hidden'
 
 import { Grid, GridItem } from 'components/Grid'
 import SocialLinks from './SocialLinks'
 import SiteLinks from './SiteLinks'
 import MailingList from './MailingList'
+import FooterCopyRight from './FooterCopyRight'
 
 const useStyles = makeStyles(theme => ({
-  footer: {
-    padding: '0.9375rem 0',
-    textAlign: 'center',
+  root: {
     display: 'flex',
-    zIndex: '2',
-    position: 'relative',
-    backgroundColor: theme.palette.background.brownLight
-  },
-  footerWhiteFont: {
-    '&,&:hover,&:focus': {
-      color: '#FFFFFF'
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: theme.spacing(5),
+    backgroundColor: theme.palette.background.brownLight,
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(2)
     }
   },
-  container,
-  gridItem: {
-    border: 'none 1px red',
-    padding: '0 3em'
+  container: {
+    width: '100%',
+    maxWidth: 920
   },
-  gridContainer: {
-    border: 'none 1px blue',
-    width: '100%'
+  gridItem: {
+    border: 'none 1px red'
+  },
+  logo: {
+    width: 180
   }
 }));
 
-export default function Footer({ whiteFont }) {
+const Footer = () => {
   const classes = useStyles();
 
   return (
-    <footer className={classNames({ [classes.footer]: true, [classes.footerWhiteFont]: whiteFont })}>
-      <Grid className={classNames({ [classes.gridContainer]: true })}>
-        <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
-          <SocialLinks />
-          <SiteLinks />
-        </GridItem>
-        <GridItem xs={12} sm={6} className={classNames('marginAuto', { [classes.gridItem]: true })}>
+    <footer className={classes.root}>
+      <div className={classes.container}>
+        <SocialLinks />
+        <Hidden smDown implementation='css'>
+          <Grid className={classes.gridContainer}>
+            <GridItem xs={12} sm={5} className={classes.gridItem}>
+              <SiteLinks />
+            </GridItem>
+            <GridItem xs={12} sm={4} className={classes.gridItem}>
+              <MailingList />
+            </GridItem>
+            <GridItem xs={12} sm={3} className={classes.gridItem}>
+              <img
+                src='/img/MWG_Primary_RGB.png'
+                alt='footerImage'
+                className={classes.logo}
+              />
+            </GridItem>
+          </Grid>
+        </Hidden>
+        <Hidden mdUp implementation='css'>
           <MailingList />
-        </GridItem>
-        <GridItem xs={12} className={classNames('marginAuto', { [classes.gridItem]: true })}>
-          For authorized transfer, firearms are required to be shipped
-          to an authorized dealer and the necessary FFL licence(s) presented
-        <br />
-        All Rights Reserved &copy 2019
-      </GridItem>
-      </Grid>
-    </footer>
+          <SiteLinks />
+          <img
+            src='/img/MWG_Primary_RGB.png'
+            alt='footerImage'
+            className={classes.logo}
+          />
+        </Hidden>
+        <FooterCopyRight />
+      </div>
+    </footer >
   )
 }
 
-Footer.propTypes = {
-  whiteFont: PropTypes.bool
-}
+export default Footer

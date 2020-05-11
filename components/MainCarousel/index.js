@@ -15,15 +15,15 @@ const settings = {
 const CAROUSEL_ITEMS = [
   {
     location: 'Yellowstone National Park, United States',
-    imageUrl: '/img/bg.jpg'
+    imageUrl: '/img/background/gun-guide-carousel-1.jpg'
   },
   {
     location: 'Somewhere Beyond, United States',
-    imageUrl: '/img/bg2.jpg'
+    imageUrl: '/img/background/gun-guide-carousel-2.jpg'
   },
   {
     location: 'Yellowstone National Park, United States',
-    imageUrl: '/img/bg3.jpg'
+    imageUrl: '/img/background/gun-guide-carousel-3.jpg'
   }
 ]
 
