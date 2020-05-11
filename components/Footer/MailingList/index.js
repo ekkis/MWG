@@ -26,7 +26,9 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center'
   },
   input: {
-    maxWidth: 200
+    '& input': {
+      padding: theme.spacing(1)
+    }
   },
   signup: {
     fontWeight: 'lighter',
