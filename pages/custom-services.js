@@ -1,4 +1,17 @@
 
-import CustomServices from 'containers/CustomServices'
+import Typography from '@material-ui/core/Typography'
 
-export default () => <CustomServices />;
+import MainCarousel from 'components/MainCarousel'
+
+const CustomServices = () => {
+  return (
+    <>
+      <MainCarousel />
+      <Typography>
+        Custom Services page
+      </Typography>
+    </>
+  )
+}
+
+export default CustomServices;

@@ -1,5 +1,5 @@
 
-import GunGuideCarousel from './GunGuideCarousel'
+import GunGuideCarousel from './Carousel'
 import PopularArticles from './PopularArticles'
 import ArticleList from './ArticleList'
 

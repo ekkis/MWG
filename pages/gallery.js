@@ -1,4 +1,17 @@
 
-import Gallerys from 'containers/Gallerys'
+import Typography from '@material-ui/core/Typography'
 
-export default () => <Gallerys />;
+import MainCarousel from 'components/MainCarousel'
+
+const Gallerys = () => {
+  return (
+    <>
+      <MainCarousel />
+      <Typography>
+        Gallerys page
+      </Typography>
+    </>
+  )
+}
+
+export default Gallerys;
