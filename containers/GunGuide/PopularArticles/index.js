@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
 import { Grid, GridItem } from 'components/Grid'
-import PopularArticleItem from './PopularArticleItem'
+import PopularArticleItem from './Item'
 
 const useStyles = makeStyles(theme => ({
   root: {

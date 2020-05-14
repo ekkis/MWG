@@ -1,4 +1,14 @@
 
-import WarriorSeries from 'containers/WarriorSeries'
+import WarriorCarousel from 'containers/WarriorSeries/Carousel'
+import CalendarInfo from 'containers/WarriorSeries/CalendarInfo'
 
-export default () => <WarriorSeries />;
+const WarriorSeries = () => {
+  return (
+    <>
+      <WarriorCarousel />
+      <CalendarInfo />
+    </>
+  )
+}
+
+export default WarriorSeries;
