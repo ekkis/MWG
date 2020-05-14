@@ -1,5 +1,5 @@
 
-import HomeCarousel from 'containers/Home/HomeCarousel'
+import HomeCarousel from 'containers/Home/Carousel'
 import RifleShotgun from 'containers/Home/RifleShotgun'
 import Specs from 'containers/Home/Specs'
 import CombatElite from 'containers/Home/CombatElite'

@@ -1,5 +1,5 @@
 
-import WarriorCarousel from 'containers/WarriorSeries/WarriorCarousel'
+import WarriorCarousel from 'containers/WarriorSeries/Carousel'
 import CalendarInfo from 'containers/WarriorSeries/CalendarInfo'
 
 const WarriorSeries = () => {
