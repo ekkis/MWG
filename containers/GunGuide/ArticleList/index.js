@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
 import TextButton from 'components/UI/Buttons/TextButton'
-import ListHeader from './ListHeader'
-import ListItem from './ListItem'
+import ListHeader from './Header'
+import ListItem from './Item'
 
 const useStyles = makeStyles(theme => ({
   root: {

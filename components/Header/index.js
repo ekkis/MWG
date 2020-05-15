@@ -15,7 +15,7 @@ import {
   dangerColor, roseColor, transition, boxShadow, drawerWidth
 } from 'assets/jss/nextjs-material-kit.js';
 
-import HeaderLinks from './HeaderLinks'
+import SocialLinks from './SocialLinks'
 import PAGES_CONSTANTS from 'constants/links/pages'
 const logo = '/img/MWG_SMALL_Blue_RGB.png'
 
@@ -204,7 +204,7 @@ export default function Header(props) {
     [classes.fixed]: fixed
   })
 
-  const leftLinks = (<HeaderLinks />)
+  const leftLinks = (<SocialLinks />)
 
   return (
     <AppBar className={appBarClasses}>
