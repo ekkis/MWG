@@ -114,7 +114,7 @@ const HeaderItem = ({ title, url }) => {
   )
 }
 
-const HeaderLinks = () => {
+const SocialLinks = () => {
   const classes = useStyles();
 
   return (
@@ -132,4 +132,4 @@ const HeaderLinks = () => {
   )
 }
 
-export default HeaderLinks;
+export default SocialLinks;

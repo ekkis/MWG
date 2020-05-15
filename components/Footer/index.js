@@ -6,7 +6,7 @@ import { Grid, GridItem } from 'components/Grid'
 import SocialLinks from './SocialLinks'
 import SiteLinks from './SiteLinks'
 import MailingList from './MailingList'
-import FooterCopyRight from './FooterCopyRight'
+import FooterCopyRight from './CopyRight'
 
 const useStyles = makeStyles(theme => ({
   root: {
