@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
 import { getDateByFormat } from 'utils/time'
-import ContentHeader from './ContentHeader'
+import ContentHeader from './Header'
 
 const useStyles = makeStyles(theme => ({
   root: {
