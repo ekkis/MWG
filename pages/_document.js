@@ -2,6 +2,8 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 
+import globalStyles from '../styles/global';
+
 class MyDocument extends Document {
   render() {
     return (
@@ -19,7 +21,9 @@ class MyDocument extends Document {
             sizes='76x76'
             href={'/img/apple-icon.png'}
           />
-          {/* Fonts and icons */}
+          <style jsx global>
+            {globalStyles}
+          </style>
           <link
             rel='stylesheet'
             type='text/css'

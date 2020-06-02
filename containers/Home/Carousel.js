@@ -74,7 +74,7 @@ const HomeCarousel = () => {
                 <br />
                 {item.description}
               </Typography>
-              <OutlineButton >
+              <OutlineButton>
                 Shop Handguns
               </OutlineButton>
             </div>
