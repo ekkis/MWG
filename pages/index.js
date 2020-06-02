@@ -1,24 +1,21 @@
-
-import HomeCarousel from 'containers/Home/Carousel'
-import RifleShotgun from 'containers/Home/RifleShotgun'
+import Hero from 'containers/Home/Hero'
+import LongGuns from 'containers/Home/LongGuns'
 import Specs from 'containers/Home/Specs'
-import CombatElite from 'containers/Home/CombatElite'
-import Competition from 'containers/Home/Competition'
+import WarriorSeries from 'containers/Home/WarriorSeries'
+import OurWork from 'containers/Home/OurWork'
 import JoinUs from 'containers/Home/JoinUs'
 import PartsCustom from 'containers/Home/PartsCustom'
 
-const Home = () => {
+export default () => {
   return (
     <>
-      <HomeCarousel />
-      <RifleShotgun />
+      <Hero />
+      <LongGuns />
       <Specs />
-      <CombatElite />
-      <Competition />
+      <WarriorSeries />
+      <OurWork />
       <JoinUs />
       <PartsCustom />
     </>
   )
 }
-
-export default Home;

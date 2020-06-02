@@ -7,7 +7,8 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    margin: theme.spacing(3, 0)
+    margin: theme.spacing(3, 0),
+    marginTop: '6em'
   },
   description: {
     fontWeight: 'lighter',
@@ -15,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const FooterCopyRight = () => {
+export default () => {
   const classes = useStyles();
 
   return (
@@ -33,10 +34,8 @@ const FooterCopyRight = () => {
         color='textPrimary'
         className={classes.description}
       >
-        All Rights Reserved &copy 2019
+        All Rights Reserved &copy; 2019
       </Typography>
     </main>
   )
 }
-
-export default FooterCopyRight;

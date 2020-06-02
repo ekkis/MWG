@@ -1,6 +1,7 @@
 
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
+import HoverImage from 'react-hover-image'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,8 +18,8 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1, 0)
   },
   icon: {
-    width: 50,
-    height: 50,
+    width: 40,
+    height: 40,
     objectFit: 'scale-down'
   },
   title: {
@@ -29,27 +30,27 @@ const useStyles = makeStyles(theme => ({
 
 const SPECS_ITEMS = [
   {
-    imageUrl: '/img/icon/spec-gun-icon.png',
+    imageUrl: '/img/icon/glock-handgun-accuracy',
     title: '2\' Handgun Accuracy',
     description: 'At 50 yards'
   },
   {
-    imageUrl: '/img/icon/spec-gun-icon.png',
+    imageUrl: '/img/icon/rifle-accuracy',
     title: '1/4\' Rifle Accuracy',
     description: 'At 100 yards'
   },
   {
-    imageUrl: '/img/icon/spec-gun-icon.png',
+    imageUrl: '/img/icon/bullet-rounds',
     title: '5,000+ Rounds',
     description: '0 Malfunctions'
   },
   {
-    imageUrl: '/img/icon/spec-gun-icon.png',
+    imageUrl: '/img/icon/warrior-series-reduced-recoil',
     title: '20-50% Reduced Recoil',
     description: 'Than Factor Firearms'
   },
   {
-    imageUrl: '/img/icon/spec-gun-icon.png',
+    imageUrl: '/img/icon/hammer-custom-made',
     title: '100% Custom Made',
     description: 'Made to Order'
   }
@@ -63,7 +64,11 @@ const AbilityList = () => {
       {
         SPECS_ITEMS.map((item, index) => (
           <div key={index} className={classes.container}>
-            <img src={item.imageUrl} className={classes.icon} />
+            <HoverImage
+              src={item.imageUrl + '-icon.png'}
+              hoverSrc={item.imageUrl + '-rollover.png'}
+              className={classes.icon}
+            />
             <Typography
               variant='body1'
               className={classes.title}

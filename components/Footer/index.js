@@ -6,7 +6,7 @@ import { Grid, GridItem } from 'components/Grid'
 import SocialLinks from './SocialLinks'
 import SiteLinks from './SiteLinks'
 import MailingList from './MailingList'
-import FooterCopyRight from './CopyRight'
+import Copyright from './Copyright'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,11 +28,15 @@ const useStyles = makeStyles(theme => ({
     border: 'none 1px red'
   },
   logo: {
-    width: 180
+    width: 320,
+    position: 'absolute',
+    top: -50,
+    left: -150,
+    border: 'none 1px pink'
   }
 }));
 
-const Footer = () => {
+export default () => {
   const classes = useStyles();
 
   return (
@@ -49,7 +53,7 @@ const Footer = () => {
             </GridItem>
             <GridItem xs={12} sm={3} className={classes.gridItem}>
               <img
-                src='/img/MWG_Primary_RGB.png'
+                src='/img/mwg-logo-detailed-flipped.png'
                 alt='footerImage'
                 className={classes.logo}
               />
@@ -60,15 +64,13 @@ const Footer = () => {
           <MailingList />
           <SiteLinks />
           <img
-            src='/img/MWG_Primary_RGB.png'
+            src='/img/mwg-logo-detailed-flipped.png'
             alt='footerImage'
             className={classes.logo}
           />
         </Hidden>
-        <FooterCopyRight />
+        <Copyright />
       </div>
     </footer >
   )
 }
-
-export default Footer

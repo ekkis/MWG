@@ -34,26 +34,60 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const PARTS_ITEMS = [
+var ImgDir = '/img/Home/PartsCustom/'
+const Sections = [
   {
-    imageUrl: '/img/background/custom-path.jpg',
-    title: 'Parts',
-    description: 'Your gun\'s only as reliable as the parts inside it',
+    image: 'shadow-compensator-parts',
+    title: 'Custom Parts',
+    description: 'The ultimate in fit, quality, and performance.',
     linkTitle: 'Shop parts'
   },
   {
-    imageUrl: '/img/background/custom-customize.jpg',
+    image: '9mm-reciever-set-blue-customize-cerakote-and-finishes',
     title: 'Customize',
-    description: 'See, feel and trust each shot',
+    description: 'Rugged and functional done your way.',
     linkTitle: 'Learn more'
   },
   {
-    imageUrl: '/img/background/custom-smithing.jpg',
+    image: 'gunsmithing-workstation',
     title: 'Gunsmithing',
-    description: 'Gun repairs and detailed gun cleaning and maintenance',
+    description: 'See, feel, and trust each shot.',
     linkTitle: 'Shop services'
   }
 ]
+
+const Section = ({item, key, classes}) => (
+  <Fragment key={key}>
+  <GridItem xs={12} sm={5}>
+    <img
+      src={ImgDir + item.image + '.jpg'}
+      alt=''
+      className={classes.image}
+    />
+  </GridItem>
+  <GridItem xs={12} sm={7} className={classes.textContainer}>
+    <Typography
+      variant='h5'
+      color='textPrimary'
+      className={classes.description}
+    >
+      {item.title}
+    </Typography>
+    <Typography
+      variant='body2'
+      color='textPrimary'
+      className={classes.description}
+    >
+      {item.description}
+    </Typography>
+    <LinkButton
+      label={item.linkTitle}
+      url=''
+    />
+  </GridItem>
+</Fragment>
+)
+
 const PartsCustom = () => {
   const classes = useStyles();
 
@@ -61,36 +95,8 @@ const PartsCustom = () => {
     <main className={classes.root}>
       <Grid className={classes.container} spacing={2}>
         {
-          PARTS_ITEMS.map((item, index) => (
-            <Fragment key={index}>
-              <GridItem xs={12} sm={5}>
-                <img
-                  src={item.imageUrl}
-                  alt=''
-                  className={classes.image}
-                />
-              </GridItem>
-              <GridItem xs={12} sm={7} className={classes.textContainer}>
-                <Typography
-                  variant='h5'
-                  color='textPrimary'
-                  className={classes.description}
-                >
-                  {item.title}
-                </Typography>
-                <Typography
-                  variant='body2'
-                  color='textPrimary'
-                  className={classes.description}
-                >
-                  {item.description}
-                </Typography>
-                <LinkButton
-                  label={item.linkTitle}
-                  url=''
-                />
-              </GridItem>
-            </Fragment>
+          Sections.map((item, index) => (
+            <Section key={index} item={item} classes={classes}/>
           ))
         }
       </Grid>
@@ -98,4 +104,4 @@ const PartsCustom = () => {
   )
 }
 
-export default PartsCustom;
+export default PartsCustom

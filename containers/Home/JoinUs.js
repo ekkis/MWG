@@ -41,11 +41,13 @@ const JoinUs = () => {
         color='textPrimary'
         className={classes.description}
       >
-        Be first in line to receive invitations to special events and hear
-        about the new, exclusive custom guns, classes and more. You'll also
-        be able to check out faster and track your project's progress so you
-        can shoot sonner. Sign up for a Modern Warrior guns account and make
-        building your custom gun online easy
+        We put the most reliable, functional, and beautiful custom 
+        guns in your hands and news about them right in your inbox. 
+        Be the first to hear about special events, new exclusive 
+        custom guns, classes, and more. Check out faster, track your 
+        project’s progress, and shoot sooner. Sign up for a Modern 
+        Warrior Guns account and make building your custom gun online 
+        even easier.
       </Typography>
       <OutlineButton>Join Now</OutlineButton>
     </main>

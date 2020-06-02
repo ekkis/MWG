@@ -8,7 +8,8 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    marginBottom: theme.spacing(1)
+    marginBottom: theme.spacing(1),
+    width: '16em'
   },
   title: {
     fontWeight: 'bold',
@@ -27,7 +28,8 @@ const useStyles = makeStyles(theme => ({
   },
   input: {
     '& input': {
-      padding: theme.spacing(1)
+      padding: theme.spacing(1),
+      width: '8em'
     }
   },
   signup: {

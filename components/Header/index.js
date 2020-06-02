@@ -17,7 +17,7 @@ import {
 
 import SocialLinks from './SocialLinks'
 import PAGES_CONSTANTS from 'constants/links/pages'
-const logo = '/img/MWG_SMALL_Blue_RGB.png'
+const logo = '/img/mwg-logo-light-blue.png'
 
 const useStyles = makeStyles(theme => ({
   appBar: {

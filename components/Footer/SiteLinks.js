@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { makeStyles } from '@material-ui/core/styles'
 import { List, ListItem } from '@material-ui/core';
 
-import PAGES_CONSTANTS from 'constants/links/pages'
+import Pages from 'constants/links/pages'
 
 const useStyles = makeStyles(theme => ({
   List: {
     columnWidth: '10em',
-    maxWidth: '350px',
+    maxWidth: '300px',
     border: 'none 1px white',
     position: 'relative',
     padding: '0'
@@ -23,54 +23,18 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const siteLinks = [
-  {
-    title: PAGES_CONSTANTS.HOME.title,
-    url: PAGES_CONSTANTS.HOME.url
-  },
-  {
-    title: PAGES_CONSTANTS.WARRIOR_SERIES.title,
-    url: PAGES_CONSTANTS.WARRIOR_SERIES.url
-  },
-  {
-    title: PAGES_CONSTANTS.CUSTOM_SERVICES.title,
-    url: PAGES_CONSTANTS.CUSTOM_SERVICES.url
-  },
-  {
-    title: PAGES_CONSTANTS.OUR_WORK.title,
-    url: PAGES_CONSTANTS.OUR_WORK.url
-  },
-  {
-    title: PAGES_CONSTANTS.CUSTOM_SERVICES.title,
-    url: PAGES_CONSTANTS.CUSTOM_SERVICES.url
-  },
-  {
-    title: PAGES_CONSTANTS.COURSES.title,
-    url: PAGES_CONSTANTS.COURSES.url
-  },
-  {
-    title: PAGES_CONSTANTS.GUN_GUIDE.title,
-    url: PAGES_CONSTANTS.GUN_GUIDE.url
-  },
-  {
-    title: PAGES_CONSTANTS.ACCOUNT_LOGIN.title,
-    url: PAGES_CONSTANTS.ACCOUNT_LOGIN.url
-  },
-  {
-    title: PAGES_CONSTANTS.SHIPPING_AND_RESUME.title,
-    url: PAGES_CONSTANTS.SHIPPING_AND_RESUME.url
-  },
-  {
-    title: PAGES_CONSTANTS.PRIVACY_POLICE.title,
-    url: PAGES_CONSTANTS.PRIVACY_POLICE.url
-  },
-  {
-    title: PAGES_CONSTANTS.TERMS_AND_CONDITIONS.title,
-    url: PAGES_CONSTANTS.TERMS_AND_CONDITIONS.url
-  },
-  {
-    title: PAGES_CONSTANTS.CONTACT.title,
-    url: PAGES_CONSTANTS.CONTACT.url
-  }
+    Pages.HOME,
+    Pages.WARRIOR_SERIES,
+    Pages.CUSTOM_SERVICES,
+    Pages.OUR_WORK,
+    Pages.CUSTOM_SERVICES,
+    Pages.COURSES,
+    Pages.GUN_GUIDE,
+    Pages.ACCOUNT_LOGIN,
+    Pages.SHIPPING_AND_RESUME,
+    Pages.PRIVACY_POLICE,
+    Pages.TERMS_AND_CONDITIONS,
+    Pages.CONTACT,
 ]
 
 const SiteLinks = () => {

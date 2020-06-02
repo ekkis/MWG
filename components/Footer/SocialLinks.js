@@ -6,8 +6,7 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(2)
   },
   socialIcon: {
-    width: 20,
-    height: 20,
+    width: 30,
     marginRight: theme.spacing(1)
   }
 }));

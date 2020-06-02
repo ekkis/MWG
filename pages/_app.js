@@ -29,8 +29,7 @@ Router.events.on('routeChangeError', () => {
   document.body.classList.remove('body-page-transition')
 })
 
-const MyApp = ({ Component, pageProps }) => {
-
+export default ({ Component, pageProps }) => {
   useEffect(() => {
     document.title = COMMON_CONSTANTS.TITLE
   })
@@ -42,7 +41,5 @@ const MyApp = ({ Component, pageProps }) => {
         <Component {...pageProps} />
       </Layout>
     </MuiThemeProvider>
-  );
-};
-
-export default MyApp;
+  )
+}

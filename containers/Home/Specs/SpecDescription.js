@@ -1,6 +1,3 @@
-
-
-
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
@@ -8,7 +5,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
     position: 'relative',
-    backgroundImage: `url(/img/background/spec-background.jpg)`,
+    backgroundImage: `url(/img/background/warrior-series-gradient-background.jpg)`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: '101% 100%',
     [theme.breakpoints.down('xs')]: {
@@ -61,24 +58,25 @@ const SpecDescription = () => {
 
   return (
     <div className={classes.root}>
-      <img src='/img/weapon/spec-gun.png' className={classes.gunImage} />
+      <img src='/img/weapon/warrior-series-black-glock.png' className={classes.gunImage} />
       <div className={classes.content}>
         <Typography
           variant='h4'
           className={classes.title}
         >
-          "AND," NOT "OR"
+          Our mission
         </Typography>
         <Typography
           variant='body1'
           color='textPrimary'
           className={classes.description}
         >
-          Some guns are reliable.  Others are about
-          speed and top-tier performance Warrior Series
-          guns are both -- because your custom gun
-          should work just as well at the range and
-          at home. That's our mission
+          Should you choose to accept it. Some guns are reliable. 
+          Others are all about speed and top-tier performance. 
+          Modern Warrior guns are both, blended into a collection 
+          of carefully considered designs, because your custom gun 
+          should work just as well at the range, at home, and on the 
+          job—and look good doing it.
         </Typography>
       </div>
     </div>
