@@ -7,8 +7,10 @@ import classNames from 'classnames';
 const useStyles = makeStyles(theme => ({
   root: {
     fontWeight: 'bold',
+    fontSize: 18,
+    fontFamily: 'Dirtyego',
     textTransform: 'uppercase',
-    padding: theme.spacing(0.25, 2),
+    padding: theme.spacing(0, 1),
     borderRadius: 10,
     border: `1.5px solid ${theme.palette.button.main}`,
     color: theme.palette.button.main,
