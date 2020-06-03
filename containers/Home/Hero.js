@@ -77,7 +77,7 @@ const HomeCarousel = () => {
                 <br />
                 time-honored weaponscraft
               </Typography>
-              <OutlineButton >
+              <OutlineButton>
                 Shop Handguns
               </OutlineButton>
             </div>
