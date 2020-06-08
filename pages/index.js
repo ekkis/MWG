@@ -1,6 +1,6 @@
 import Hero from 'containers/Home/Hero'
 import LongGuns from 'containers/Home/LongGuns'
-import Specs from 'containers/Home/Specs'
+import OurMission from 'containers/Home/OurMission'
 import WarriorSeries from 'containers/Home/WarriorSeries'
 import OurWork from 'containers/Home/OurWork'
 import JoinUs from 'containers/Home/JoinUs'
@@ -11,7 +11,7 @@ export default () => {
     <>
       <Hero />
       <LongGuns />
-      <Specs />
+      <OurMission />
       <WarriorSeries />
       <OurWork />
       <JoinUs />

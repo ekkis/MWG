@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 
-import TextButton from 'components/UI/Buttons/TextButton'
+import TextButton from 'components/Button/Text'
 import ListHeader from './Header'
 import ListItem from './Item'
 

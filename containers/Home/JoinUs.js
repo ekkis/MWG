@@ -2,7 +2,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
-import OutlineButton from 'components/UI/Buttons/OutlineButton'
+import OutlineButton from 'components/Button/Outline'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,8 +23,9 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 600,
     padding: theme.spacing(2, 0)
   }
-}));
-const JoinUs = () => {
+}))
+
+export default () => {
   const classes = useStyles()
 
   return (
@@ -53,5 +54,3 @@ const JoinUs = () => {
     </main>
   )
 }
-
-export default JoinUs;

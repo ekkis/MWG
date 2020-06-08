@@ -1,7 +1,6 @@
-
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   root: {
     marginBottom: theme.spacing(2)
   },
@@ -9,7 +8,7 @@ const useStyles = makeStyles(theme => ({
     width: 30,
     marginRight: theme.spacing(1)
   }
-}));
+})
 
 const items = [
   {
@@ -30,9 +29,8 @@ const items = [
   }
 ]
 
-const SocialLinks = () => {
-  const classes = useStyles();
-
+export default () => {
+  const classes = makeStyles(styles)()
   return (
     <main className={classes.root}>
       {
@@ -49,5 +47,3 @@ const SocialLinks = () => {
     </main>
   )
 }
-
-export default SocialLinks;

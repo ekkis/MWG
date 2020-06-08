@@ -2,7 +2,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
-import LinkButton from 'components/UI/Buttons/LinkButton'
+import LinkButton from 'components/Button/Link'
 
 const useStyles = makeStyles(theme => ({
   root: {

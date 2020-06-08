@@ -4,9 +4,9 @@ import classNames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
-import OutlineButton from 'components/UI/Buttons/OutlineButton'
+import OutlineButton from 'components/Button/Outline'
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   container: {
     backgroundColor: theme.palette.background.main
   },
@@ -20,11 +20,9 @@ const useStyles = makeStyles(theme => ({
     alignItems: 'center'
   },
   description: {
-    textTransform: 'uppercase',
-    fontWeight: 'lighter',
-    margin: theme.spacing(2, 0)
+    margin: theme.spacing(2, 0),
   }
-}));
+})
 
 const settings = {
   dots: true,
@@ -58,9 +56,8 @@ function Image({fn, classes}) {
   )
 }
 
-const HomeCarousel = () => {
-  const classes = useStyles();
-
+export default () => {
+  const classes = makeStyles(styles)()
   return (
     <Carousel {...settings}>
       {
@@ -68,13 +65,9 @@ const HomeCarousel = () => {
           <div key={index} className={classes.container}>
             <Image fn={fn} classes={classes} />
             <div className={classNames(classes.content, 'slick-caption')}>
-              <Typography
-                variant='h4'
-                color='textPrimary'
-                className={classes.description}
-              >
+              <Typography variant='h4' className={classes.description}>
                 Modern Weapons
-                <br />
+                <br/>
                 time-honored weaponscraft
               </Typography>
               <OutlineButton>
@@ -87,5 +80,3 @@ const HomeCarousel = () => {
     </Carousel >
   )
 }
-
-export default HomeCarousel;

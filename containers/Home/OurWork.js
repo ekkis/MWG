@@ -5,9 +5,9 @@ import Hidden from '@material-ui/core/Hidden';
 
 import Section from 'components/Section'
 import { Grid, GridItem } from 'components/Grid'
-import LinkButton from 'components/UI/Buttons/LinkButton'
+import LinkButton from 'components/Button/Link'
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   container: {
     position: 'relative'
   },
@@ -29,10 +29,9 @@ const useStyles = makeStyles(theme => ({
   },
   description: {
     textTransform: 'uppercase',
-    fontWeight: 'lighter',
     margin: theme.spacing(1, 0)
   }
-}));
+})
 
 const settings = {
   dots: false,
@@ -46,62 +45,49 @@ const settings = {
   adaptiveHeight: false,
 }
 
-const Images = [
-  [
-    '/img/weapon/competition-weapon-1.jpg',
-    '/img/weapon/competition-weapon-2.jpg'
-  ],
-  [
-    '/img/weapon/competition-weapon-3.jpg',
-    '/img/weapon/competition-weapon-4.jpg'
-  ],
-  [
-    '/img/weapon/competition-weapon-5.jpg',
-    '/img/weapon/competition-weapon-6.jpg'
-  ],
-  [
-    '/img/weapon/competition-weapon-7.jpg',
-    '/img/weapon/competition-weapon-8.jpg'
-  ]
-]
+const ImgDir = '/img/Home/OurWork/'
+const Tiles = () => "x".repeat(4).split('').map((v,i) => i + 1)
+const Tile = ({index, classes}) => (
+  <Carousel {...settings}>
+    <div key={1}>
+      <img src={ImgDir + 'Column' + index + '_ImageA.jpg'} 
+        className={classes.image} 
+        />
+    </div>
+    <div key={2}>
+      <img src={ImgDir + 'Column' + index + '_ImageB.jpg'} 
+        className={classes.image} 
+        />
+    </div>
+  </Carousel>
+)
 
-const Competition = () => {
-  const classes = useStyles();
-
+export default () => {
+  const classes = makeStyles(styles)
   return (
     <Section className={classes.container}>
       <Hidden xsDown implementation='css'>
         <Grid>
-          {
-            Images.map((competition, index) => (
-              <GridItem key={`competition${index}`} xs={3}>
-                <Carousel {...settings}>
-                  {
-                    competition.map((item, i) => (
-                      <div key={i}>
-                        <img src={item} className={classes.image} />
-                      </div>
-                    ))
-                  }
-                </Carousel>
-              </GridItem>
-            ))
-          }
+        {
+          Tiles().map(index => (
+            <GridItem key={`competition${index}`} xs={3}>
+              <Tile index={index} classes={classes} />
+            </GridItem>
+          ))
+        }
         </Grid>
       </Hidden>
+
       <Hidden smUp implementation='css'>
         <Carousel {...settings}>
-          {
-            Images.map((competition, index) => (
-              competition.map((item, i) => (
-                <div key={i}>
-                  <img src={item} className={classes.image} />
-                </div>
-              ))
-            ))
-          }
+        {
+          Tiles().map(index => (
+            <Tile index={index} classes={classes} />
+          ))
+        }
         </Carousel>
       </Hidden>
+
       <div className={classes.content}>
         <Typography
           variant='h4'
@@ -118,5 +104,3 @@ const Competition = () => {
     </Section>
   )
 }
-
-export default Competition

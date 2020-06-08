@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 420,
     textTransform: 'uppercase',
     textAlign: 'center',
-    fontWeight: 'lighter',
     marginBottom: theme.spacing(2)
   }
 }));

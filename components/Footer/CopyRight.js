@@ -11,7 +11,6 @@ const useStyles = makeStyles(theme => ({
     marginTop: '6em'
   },
   description: {
-    fontWeight: 'lighter',
     textAlign: 'center'
   }
 }));

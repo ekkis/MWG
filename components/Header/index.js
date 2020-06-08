@@ -3,19 +3,17 @@ import Link from 'next/link'
 import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
-import Button from '@material-ui/core/Button'
-import Hidden from '@material-ui/core/Hidden'
-import Drawer from '@material-ui/core/Drawer'
+import {
+  AppBar, Toolbar, Button, IconButton,
+  Hidden, Drawer
+} from '@material-ui/core'
 import Menu from '@material-ui/icons/Menu'
 import {
   container, defaultFont, primaryColor, infoColor, successColor, warningColor,
   dangerColor, roseColor, transition, boxShadow, drawerWidth
 } from 'assets/jss/nextjs-material-kit.js';
 
-import SocialLinks from './SocialLinks'
+import PageLinks from './PageLinks'
 import PAGES_CONSTANTS from 'constants/links/pages'
 const logo = '/img/mwg-logo-light-blue.png'
 
@@ -204,7 +202,7 @@ export default function Header(props) {
     [classes.fixed]: fixed
   })
 
-  const leftLinks = (<SocialLinks />)
+  const leftLinks = (<PageLinks />)
 
   return (
     <AppBar className={appBarClasses}>
@@ -222,7 +220,6 @@ export default function Header(props) {
         </Hidden>
         <Hidden mdUp>
           <IconButton
-            color='inherit'
             aria-label='open drawer'
             onClick={handleDrawerToggle}
           >
@@ -232,9 +229,7 @@ export default function Header(props) {
       </Toolbar>
       <Hidden mdUp implementation='js'>
         <Drawer
-          variant='temporary'
-          anchor={'right'}
-          open={mobileOpen}
+          variant='temporary' anchor={'right'} open={mobileOpen}
           classes={{
             paper: classes.drawerPaper
           }}

@@ -1,17 +1,6 @@
 
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
-import Graphik from 'public/fonts/Graphik-Regular.otf'
 
-const typography = {
-  fontFamily: 'Graphik'
-}
-const overrides = {
-  MuiCssBaseline: {
-    '@global': {
-      '@font-face': [Graphik]
-    }
-  }
-}
 const palette = {
   primary: {
     light: '#4791db',
@@ -68,8 +57,16 @@ const custom = {
   }
 }
 
+const typography = {
+  fontFamily: 'Graphik',
+  h4: {
+    textTransform: 'uppercase',
+    color: palette.text.primary
+  }
+}
+
 const theme = responsiveFontSizes(createMuiTheme({
-  typography, overrides, palette, custom
+  typography, palette, custom
 }))
 
 export { theme }

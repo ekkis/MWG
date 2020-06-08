@@ -2,7 +2,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
-import LinkButton from 'components/UI/Buttons/LinkButton'
+import LinkButton from 'components/Button/Link'
 import PAGES_CONSTANTS from 'constants/links/pages'
 
 const useStyles = makeStyles(theme => ({

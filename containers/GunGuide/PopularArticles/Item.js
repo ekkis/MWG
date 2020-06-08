@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 
-import LinkButton from 'components/UI/Buttons/LinkButton'
+import LinkButton from 'components/Button/Link'
 import PAGES_CONSTANTS from 'constants/links/pages'
 import { getDateByFormat } from 'utils/time'
 
@@ -37,7 +37,6 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2, 1)
   },
   title: {
-    fontWeight: 'lighter',
     textTransform: 'uppercase',
     marginBottom: theme.spacing(1)
   },
@@ -46,7 +45,6 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(1)
   },
   description: {
-    fontWeight: 'lighter',
     overflow: 'hidden',
     display: '-webkit-box',
     WebkitLineClamp: 4,

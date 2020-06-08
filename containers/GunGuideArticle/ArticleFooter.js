@@ -2,7 +2,7 @@
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
-import OutlineButton from 'components/UI/Buttons/OutlineButton'
+import OutlineButton from 'components/Button/Outline'
 import PAGES_CONSTANTS from 'constants/links/pages'
 
 const useStyles = makeStyles(theme => ({

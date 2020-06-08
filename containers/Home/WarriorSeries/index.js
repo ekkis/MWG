@@ -6,7 +6,7 @@ import { Typography } from '@material-ui/core'
 import Hidden from '@material-ui/core/Hidden';
 
 import Section from 'components/Section'
-import LinkButton from 'components/UI/Buttons/LinkButton'
+import LinkButton from 'components/Button/Link'
 import MobileCombatItem from './MobileCombatItem'
 
 const useStyles = makeStyles(theme => ({

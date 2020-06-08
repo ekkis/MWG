@@ -1,12 +1,12 @@
 
 import Typography from '@material-ui/core/Typography'
 
-import MainCarousel from 'components/MainCarousel'
+// import MainCarousel from 'components/MainCarousel'
 
 const Gallerys = () => {
   return (
     <>
-      <MainCarousel />
+      {/* <MainCarousel /> */}
       <Typography>
         Gallerys page
       </Typography>

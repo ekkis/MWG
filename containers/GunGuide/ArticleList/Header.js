@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import CustomSingleSelect from 'components/UI/CustomSingleSelect'
+import CustomSingleSelect from 'components/CustomSingleSelect'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     textTransform: 'uppercase',
-    fontWeight: 'lighter',
     marginBottom: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       textAlign: 'center'

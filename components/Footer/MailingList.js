@@ -12,13 +12,13 @@ const useStyles = makeStyles(theme => ({
     width: '16em'
   },
   title: {
+    fontSize: 16,
     fontWeight: 'bold',
     textTransform: 'uppercase',
     color: theme.palette.button.main,
     marginBottom: theme.spacing(2)
   },
   description: {
-    fontWeight: 'lighter',
     marginBottom: theme.spacing(2)
   },
   inputContainer: {
@@ -33,7 +33,6 @@ const useStyles = makeStyles(theme => ({
     }
   },
   signup: {
-    fontWeight: 'lighter',
     marginRight: theme.spacing(1)
   }
 }));
@@ -44,7 +43,7 @@ const MailingList = () => {
   return (
     <main className={classes.root}>
       <Typography
-        variant='body1'
+        variant='h5'
         className={classes.title}
       >
         Latest from MWG

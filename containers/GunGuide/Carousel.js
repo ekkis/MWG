@@ -5,7 +5,7 @@ import classNames from 'classnames'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
-import OutlineButton from 'components/UI/Buttons/OutlineButton'
+import OutlineButton from 'components/Button/Outline'
 import PAGES_CONSTANTS from 'constants/links/pages'
 
 const useStyles = makeStyles(theme => ({
@@ -26,12 +26,10 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     textTransform: 'uppercase',
-    fontWeight: 'lighter',
     marginBottom: theme.spacing(2)
   },
   description: {
     textTransform: 'uppercase',
-    fontWeight: 'lighter',
     maxWidth: 350,
     marginBottom: theme.spacing(2)
   }

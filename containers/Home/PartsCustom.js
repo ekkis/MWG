@@ -1,12 +1,12 @@
 
-import { Fragment } from 'react';
+import { Fragment } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 
 import { Grid, GridItem } from 'components/Grid'
-import LinkButton from 'components/UI/Buttons/LinkButton'
+import LinkButton from 'components/Button/Link'
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   root: {
     display: 'flex',
     justifyContent: 'center',
@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
   description: {
     padding: theme.spacing(1, 0)
   }
-}));
+})
 
 var ImgDir = '/img/Home/PartsCustom/'
 const Sections = [
@@ -56,8 +56,8 @@ const Sections = [
   }
 ]
 
-const Section = ({item, key, classes}) => (
-  <Fragment key={key}>
+const Section = ({item, classes}) => (
+  <Fragment key={item.title}>
   <GridItem xs={12} sm={5}>
     <img
       src={ImgDir + item.image + '.jpg'}
@@ -68,14 +68,12 @@ const Section = ({item, key, classes}) => (
   <GridItem xs={12} sm={7} className={classes.textContainer}>
     <Typography
       variant='h5'
-      color='textPrimary'
       className={classes.description}
     >
       {item.title}
     </Typography>
     <Typography
       variant='body2'
-      color='textPrimary'
       className={classes.description}
     >
       {item.description}
@@ -85,23 +83,20 @@ const Section = ({item, key, classes}) => (
       url=''
     />
   </GridItem>
-</Fragment>
+  </Fragment>
 )
 
-const PartsCustom = () => {
-  const classes = useStyles();
-
+export default () => {
+  const classes = makeStyles(styles)()
   return (
     <main className={classes.root}>
       <Grid className={classes.container} spacing={2}>
-        {
-          Sections.map((item, index) => (
-            <Section key={index} item={item} classes={classes}/>
-          ))
-        }
+      {
+        Sections.map(item => (
+          <Section item={item} classes={classes}/>
+        ))
+      }
       </Grid>
     </main>
   )
 }
-
-export default PartsCustom

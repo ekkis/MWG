@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core'
 
 import { Grid, GridItem } from 'components/Grid'
-import LinkButton from 'components/UI/Buttons/LinkButton'
+import LinkButton from 'components/Button/Link'
 
 const ImgDir = '/img/Home/LongGuns/'
 const useStyles = makeStyles(theme => ({
@@ -32,8 +32,6 @@ const useStyles = makeStyles(theme => ({
   },
   description: {
     textAlign: 'center',
-    textTransform: 'uppercase',
-    fontWeight: 'lighter',
     margin: theme.spacing(2, 0)
   }
 }));
@@ -49,7 +47,7 @@ const Panes = [
   },
 ]
 
-const RifleShotgun = () => {
+export default () => {
   const classes = useStyles();
 
   return (
@@ -66,11 +64,7 @@ const RifleShotgun = () => {
               src={ImgDir + item.imageUrl + '.png'}
               className={classNames(classes.image)}
             />
-            <Typography
-              variant='h4'
-              color='textPrimary'
-              className={classes.description}
-            >
+            <Typography variant='h4' className={classes.description}>
               Warrior
               <br />
               {item.name}
@@ -85,5 +79,3 @@ const RifleShotgun = () => {
     </Grid>
   )
 }
-
-export default RifleShotgun;

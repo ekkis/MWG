@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import TextButton from 'components/UI/Buttons/TextButton'
+import TextButton from 'components/Button/Text'
 import PAGES_CONSTANTS from 'constants/links/pages'
 import { getDateByFormat } from 'utils/time'
 
@@ -35,7 +35,6 @@ const useStyles = makeStyles(theme => ({
     }
   },
   title: {
-    fontWeight: 'lighter',
     textTransform: 'uppercase',
     paddingRight: theme.spacing(1),
     marginBottom: theme.spacing(0.5)
@@ -44,7 +43,6 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.goldLight
   },
   description: {
-    fontWeight: 'lighter',
     overflow: 'hidden',
     display: '-webkit-box',
     WebkitLineClamp: 2,

@@ -17,7 +17,6 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(0.5, 0)
   },
   link: {
-    fontWeight: 'lighter',
     color: theme.palette.text.primary
   }
 }));

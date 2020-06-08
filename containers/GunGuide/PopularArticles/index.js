@@ -18,7 +18,6 @@ const useStyles = makeStyles(theme => ({
     }
   },
   title: {
-    fontWeight: 'lighter',
     textAlign: 'center',
     textTransform: 'uppercase',
     marginBottom: theme.spacing(4),

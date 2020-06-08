@@ -1,0 +1,26 @@
+[
+   {
+     "title": "The Modern Warrior",
+     "image": "2. The Modern Warrior/modern-warrior-blue-1911-colt-defender-right-profile.png",
+     "desc": "The ultimate “utility tool” is a goes-with-you-everywhere custom gun you can rely on day after day.",
+     "button": "Custom Build"
+   },
+   {
+     "title": "The Combat Elite",
+     "image": "3. The Combat Elite/black-1911-left-profile.png",
+     "desc": "Ippisit (?)",
+     "button": "Custom Build"
+   },
+   {
+     "title": "The Deep Concealment",
+     "image": "4. Deep Concealment/deep-concealment-blue-sig-p238-right-profile.png",
+     "desc": "Every concealed-carry upgrade your factory firearm is missing out on. A combat-ready gun build that’s showy on the inside.",
+     "button": "Custom Build"
+   },
+   {
+     "title": "The Competition",
+     "image": "5. The Competition/competition-p80-right-profile.png",
+     "desc": "A race-ready custom gun build with real-world applications. Go from 3-gun competition to range day and back.",
+     "button": "Custom Build"
+   }
+ ]

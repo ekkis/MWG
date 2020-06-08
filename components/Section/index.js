@@ -13,9 +13,9 @@ function Section(props) {
         [classes.section]: true
     });
     return (
-        <div className={sectionClasses}>
+        <main className={sectionClasses}>
             {props.children}
-        </div>
+        </main>
     )
 }
 
