@@ -5,14 +5,21 @@ import Hidden from '@material-ui/core/Hidden';
 
 import Section from 'components/Section'
 import { Grid, GridItem } from 'components/Grid'
-import LinkButton from 'components/Button/Link'
+import Button from 'components/Button/Link'
 
+const ImgDir = '/img/Home/OurWork/'
 const styles = theme => ({
+  GridItem: {
+    // border: '1px solid red',
+  },
+  carousel: {
+    // border: '1px solid blue'
+  },
   container: {
     position: 'relative'
   },
   image: {
-    height: 668,
+    height: 700,
     width: '100%',
     objectFit: 'cover'
   },
@@ -45,32 +52,15 @@ const settings = {
   adaptiveHeight: false,
 }
 
-const ImgDir = '/img/Home/OurWork/'
-const Tiles = () => "x".repeat(4).split('').map((v,i) => i + 1)
-const Tile = ({index, classes}) => (
-  <Carousel {...settings}>
-    <div key={1}>
-      <img src={ImgDir + 'Column' + index + '_ImageA.jpg'} 
-        className={classes.image} 
-        />
-    </div>
-    <div key={2}>
-      <img src={ImgDir + 'Column' + index + '_ImageB.jpg'} 
-        className={classes.image} 
-        />
-    </div>
-  </Carousel>
-)
-
 export default () => {
-  const classes = makeStyles(styles)
+  const classes = makeStyles(styles)()
   return (
     <Section className={classes.container}>
       <Hidden xsDown implementation='css'>
         <Grid>
         {
           Tiles().map(index => (
-            <GridItem key={`competition${index}`} xs={3}>
+            <GridItem key={`competition${index}`} xs={3} className={classes.GridItem}>
               <Tile index={index} classes={classes} />
             </GridItem>
           ))
@@ -83,24 +73,40 @@ export default () => {
         {
           Tiles().map(index => (
             <Tile index={index} classes={classes} />
-          ))
-        }
+            ))
+          }
         </Carousel>
       </Hidden>
 
       <div className={classes.content}>
-        <Typography
-          variant='h4'
-          color='textPrimary'
+        <Typography variant='h4' color='textPrimary'
           className={classes.description}
-        >
+          >
           Our Work
         </Typography>
-        <LinkButton
-          label='see past projects'
-          url=''
-        />
+        <Button label='see past projects' url='' />
       </div>
     </Section>
+  )
+}
+
+function Tiles() {
+  return "x".repeat(4).split('').map((v,i) => i + 1)
+}
+
+function Tile({index, classes}) {
+  return (
+  <Carousel {...settings} className={classes.carousel}>
+    <div key={1}>
+      <img src={ImgDir + 'Column' + index + '_ImageA.jpg'} 
+        className={classes.image} 
+      />
+    </div>
+    <div key={2}>
+      <img src={ImgDir + 'Column' + index + '_ImageB.jpg'} 
+        className={classes.image} 
+      />
+    </div>
+  </Carousel>
   )
 }

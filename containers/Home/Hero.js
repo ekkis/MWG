@@ -47,7 +47,7 @@ const Images = [
 ]
 
 function Image({fn, classes}) {
-  const root = '/img/Home/Carousel/'
+  const root = '/img/Home/Hero/'
   return (
     <img src={root + fn + '.png'} 
       alt='carousel image' 

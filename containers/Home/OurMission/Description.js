@@ -16,9 +16,9 @@ const useStyles = makeStyles(theme => ({
   },
   gunImage: {
     position: 'absolute',
-    top: -70,
-    left: '-60%',
-    width: '160%',
+    top: 90,
+    left: -180,
+    width: '100%',
     [theme.breakpoints.down('xs')]: {
       left: 'unset',
       top: 'unset',

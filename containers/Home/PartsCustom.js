@@ -31,7 +31,7 @@ const styles = theme => ({
   },
   description: {
     padding: theme.spacing(1, 0)
-  }
+  },
 })
 
 var ImgDir = '/img/Home/PartsCustom/'

@@ -1,12 +1,9 @@
 import {Typography} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
+import Grid from "@material-ui/core/Grid"
 import classNames from 'classnames'
 
-import Section from 'components/Section'
 import Button from 'components/Button/Outline'
-import { Grid, GridItem } from 'components/Grid'
-
-const ImgDir = '/img/WarriorSeries/'
 
 import Hero from 'containers/WarriorSeries/Hero'
 import Scratch from 'containers/WarriorSeries/Scratch'
@@ -21,59 +18,105 @@ export default () => (
   </>
 )
 
+const ImgDir = '/img/WarriorSeries/'
 const styles = theme => ({
-  section: {
+  Grid: {
+    position: 'relative',
     backgroundColor: 'black',
-    // border: 'solid 1px pink'
+    // border: 'solid 1px red'
+  },
+  GridItem: {
+    height: '600px',
+    display: 'grid',
+    alignItems: 'center',
+    // border: 'solid 1px red',
+  },
+  GridLeft: {
+    justifyItems: 'end',
+    '& img': {
+      left: 60
+    },
+    '& $content': {
+      marginRight: '5em',
+    },
+  },
+  GridRight: {
+    justifyItems: 'start',
+    '& img': {
+      left: -60
+    },
+    '& $content': {
+      marginLeft: '8em'
+    }
   },
   image: {
-    width: '100%',
-    objectFit: 'cover'
+    position: 'relative',
+    width: '90%',
+    objectFit: 'cover',
+    // border:  'solid 1px blue'
   },
   content: {
-    position: 'absolute',
-    marginTop: -460,
-    width: '22em',
-    //  border: '1px solid pink'
+    width: '25em'
   },
-  TheModernWarrior: {
-    '& img': { marginLeft: '200px', },
-    '& $content': { marginLeft: 180, }
-  },
-  TheCombatElite: {
-    '& img': { marginLeft: '-190px' },
-    '& $content': { marginLeft: 675, }
-  },
-  TheDeepConcealment: {
-    '& img': { marginLeft: '200px', },
-    '& $content': { marginLeft: 180, }
+  desc: {
+    marginTop: '0.5em',
+    marginBottom: '2em',
   },
   TheCompetition: {
-    '& img': { marginLeft: '-150px', },
+    '& img': {
+      position: 'relative',
+      left: 200,
+      width: '110%'
+    },
     '& $content': {
-      marginLeft: 600,
-      marginTop: -360,
-    }
+      paddingTop: 150,
+      marginLeft: '3em'
+    },
   }
 })
 
+function Tile({item, classes, reverse}) {
+  var sectionClass = classes[item.title.replace(/\s+/, '')]
+  var styles = [
+    classNames(classes.GridItem, classes.GridLeft, sectionClass),
+    classNames(classes.GridItem, classes.GridRight, sectionClass)
+  ]
+  var contents = [(
+    <img src={ImgDir + item.image} className={classes.image} />
+  ),
+  (
+    <div className={classes.content}>
+    <Typography variant='h4' className={classes.title}>
+      {item.title}
+    </Typography>
+    <Typography variant='body1' className={classes.desc}>
+      {item.desc}
+    </Typography>
+    <Button url='' className={classes.button}>{item.button}</Button>
+    </div>
+  )]
+  if (reverse) swap(contents)
+  return (
+    <>
+    <Grid item xs={6} className={styles[0]}>{contents[0]}</Grid>
+    <Grid item xs={6} className={styles[1]}>{contents[1]}</Grid>
+    </>
+  )
+}
+
 function Sections() {
   const classes = makeStyles(styles)()
-  return require('containers/WarriorSeries/Sections.json').map(o => {
-    const sectionClass = o.title.replace(/\s+/g, '')
-    return (
-    <Section className={classNames(classes.section, classes[sectionClass])}>
-      <img src={ImgDir + o.image} className={classes.image} />
-      <div className={classes.content}>
-        <Typography variant='h4' style={{marginBottom: 15}}>
-          {o.title}
-        </Typography>
-        <Typography variant='body1' style={{marginBottom: 25}}>
-          {o.desc}
-        </Typography>
-        <Button url=''>{o.button}</Button>
-      </div>
-    </Section>
-    )
-  })
+  return (
+    <Grid container className={classes.Grid}>
+    {
+      require('containers/WarriorSeries/Sections.json').map((item, index) => (
+        <Tile item={item} classes={classes} reverse={index % 2 == 0} />
+      ))
+    }
+    </Grid>
+  )
+}
+
+function swap(r) {
+  var x = r[0]; r[0] = r[1]; r[1] = x
 }

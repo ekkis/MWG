@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     width: '100%',
-    height: 200,
+    // height: 475,
     objectFit: 'contain'
   },
   description: {
@@ -48,7 +48,7 @@ const Panes = [
 ]
 
 export default () => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   return (
     <Grid>

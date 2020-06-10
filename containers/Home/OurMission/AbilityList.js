@@ -11,12 +11,14 @@ const useStyles = makeStyles(theme => ({
     flexDirection: 'column',
     margin: theme.spacing(1, 0),
     padding: '2em 0',
+    backgroundColor: 'white'
+
   },
   container: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    margin: theme.spacing(1, 0)
+    margin: theme.spacing(1, 0),
   },
   icon: {
     width: 40,
@@ -32,12 +34,12 @@ const useStyles = makeStyles(theme => ({
 const SPECS_ITEMS = [
   {
     image: 'glock-handgun-accuracy',
-    title: '2\' Handgun Accuracy',
+    title: '2" Handgun Accuracy',
     description: 'At 50 yards'
   },
   {
     image: 'rifle-accuracy',
-    title: '1/4\' Rifle Accuracy',
+    title: '1/4" Rifle Accuracy',
     description: 'At 100 yards'
   },
   {
